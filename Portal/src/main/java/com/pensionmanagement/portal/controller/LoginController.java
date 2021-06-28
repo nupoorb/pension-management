@@ -24,7 +24,6 @@ public class LoginController {
 	@Autowired
 	private PortalService portalService;
 
-	
 	@GetMapping("/")
 	public String homePage(HttpSession session) {
 		if((session.getAttribute("token")==null)) {
@@ -35,23 +34,34 @@ public class LoginController {
 	}
 	
 	
-	
 	@GetMapping("/home")
 	public String home(HttpSession session) {
-		return null;
+		if((session.getAttribute("token")==null)) {
+		return "index";
 	}
-	
+		return "home";
+	}
 	
 	@GetMapping("/login")
 	public String displayLoginPage(Model model, UserLoginCredential login,HttpSession session) {
-		return null;
+		if((session.getAttribute("token")==null)) {
+		log.debug("Fetching the login Page");
+		model.addAttribute("login", login);
+		return "login";
+		}
+		else {
+			log.debug("User is logged in already");
+			return "redirect:/home";
+		}
 	}
 	
-
+	
 	@GetMapping("/logout")
 	public String logout(HttpSession session,Model model)
 	{
 		log.debug("Logging Out");
+		session.invalidate();
+		model.addAttribute("login", new UserLoginCredential()); 
 		return "login";
 	}
 	
@@ -59,7 +69,19 @@ public class LoginController {
 	@PostMapping("/login")
 	public String parseLoginPage(@Valid @ModelAttribute("pensionerInput") PensionerInput pensionerInput ,@ModelAttribute("login") UserLoginCredential login,HttpServletRequest request,Model model) {
 		log.debug("Submitting login Information");
-		//UserLoginCredential token = portalService.getPensionerPage(pensionerInput,login);
-		return null;
+		UserLoginCredential token = portalService.getPensionerPage(pensionerInput,login);
+
+		if(token!=null)
+		{
+			log.debug("User Successfully authenticated");
+			log.debug("Fetching PensionerDetails Form");
+			request.getSession().setAttribute("token", token.getToken());
+			request.getSession().setAttribute("uid", token.getUid());
+			return "home";
+		}
+			model.addAttribute("loginerror", "Invalid Username/Password");
+			return "login";
+	
+		
 	}
 }

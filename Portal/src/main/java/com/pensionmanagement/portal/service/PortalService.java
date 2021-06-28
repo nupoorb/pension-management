@@ -14,6 +14,7 @@ import com.pensionmanagement.portal.model.UserToken;
 
 public interface PortalService {
 	
+	UserLoginCredential getPensionerPage(PensionerInput pensionerInput, UserLoginCredential login);
 	
 	String getToken(ResponseEntity<UserToken> response);
 	
