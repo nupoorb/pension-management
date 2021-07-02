@@ -52,10 +52,12 @@ public class AuthenticationController {
 			throw new UserException("Invalid Username/Password");
 		}
 	}
+	
 	@GetMapping("/health-check")
 	public ResponseEntity<String> healthCheck() {
 	return new ResponseEntity<>("Ok", HttpStatus.OK);
 	}
+	
 	/**
 	 * This method is used to check for validity of token
 	 * 
