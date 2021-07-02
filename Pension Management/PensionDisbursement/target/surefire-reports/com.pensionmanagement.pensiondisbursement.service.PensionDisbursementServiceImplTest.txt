@@ -1,0 +1,28 @@
+-------------------------------------------------------------------------------
+Test set: com.pensionmanagement.pensiondisbursement.service.PensionDisbursementServiceImplTest
+-------------------------------------------------------------------------------
+Tests run: 7, Failures: 6, Errors: 0, Skipped: 0, Time elapsed: 0.141 s <<< FAILURE! - in com.pensionmanagement.pensiondisbursement.service.PensionDisbursementServiceImplTest
+testGetPensionDisbursementSuccess  Time elapsed: 0.001 s  <<< FAILURE!
+org.opentest4j.AssertionFailedError: expected: com.pensionmanagement.pensiondisbursement.model.ProcessPensionResponse@185a7dd0<ProcessPensionResponse(processPensionStatusCode=10)> but was: com.pensionmanagement.pensiondisbursement.model.ProcessPensionResponse@2358443e<ProcessPensionResponse(processPensionStatusCode=10)>
+	at com.pensionmanagement.pensiondisbursement.service.PensionDisbursementServiceImplTest.testGetPensionDisbursementSuccess(PensionDisbursementServiceImplTest.java:52)
+
+testGetPensionDisbursementPublicBankSuccess  Time elapsed: 0.002 s  <<< FAILURE!
+org.opentest4j.AssertionFailedError: expected: com.pensionmanagement.pensiondisbursement.model.ProcessPensionResponse@4d0b276e<ProcessPensionResponse(processPensionStatusCode=10)> but was: com.pensionmanagement.pensiondisbursement.model.ProcessPensionResponse@31531d0d<ProcessPensionResponse(processPensionStatusCode=10)>
+	at com.pensionmanagement.pensiondisbursement.service.PensionDisbursementServiceImplTest.testGetPensionDisbursementPublicBankSuccess(PensionDisbursementServiceImplTest.java:81)
+
+testGetPensionDisbursementPublicBankFailure  Time elapsed: 0.001 s  <<< FAILURE!
+org.opentest4j.AssertionFailedError: expected: com.pensionmanagement.pensiondisbursement.model.ProcessPensionResponse@231d3ce<ProcessPensionResponse(processPensionStatusCode=21)> but was: com.pensionmanagement.pensiondisbursement.model.ProcessPensionResponse@204c5ddf<ProcessPensionResponse(processPensionStatusCode=21)>
+	at com.pensionmanagement.pensiondisbursement.service.PensionDisbursementServiceImplTest.testGetPensionDisbursementPublicBankFailure(PensionDisbursementServiceImplTest.java:105)
+
+testGetPensionDisbursementPrivateBankSuccess  Time elapsed: 0 s  <<< FAILURE!
+org.opentest4j.AssertionFailedError: expected: com.pensionmanagement.pensiondisbursement.model.ProcessPensionResponse@591a4d25<ProcessPensionResponse(processPensionStatusCode=10)> but was: com.pensionmanagement.pensiondisbursement.model.ProcessPensionResponse@4bfe83d<ProcessPensionResponse(processPensionStatusCode=10)>
+	at com.pensionmanagement.pensiondisbursement.service.PensionDisbursementServiceImplTest.testGetPensionDisbursementPrivateBankSuccess(PensionDisbursementServiceImplTest.java:93)
+
+testGetPensionDisbursementPrivateBankFailure  Time elapsed: 0 s  <<< FAILURE!
+org.opentest4j.AssertionFailedError: expected: com.pensionmanagement.pensiondisbursement.model.ProcessPensionResponse@6081f330<ProcessPensionResponse(processPensionStatusCode=21)> but was: com.pensionmanagement.pensiondisbursement.model.ProcessPensionResponse@eb695e8<ProcessPensionResponse(processPensionStatusCode=21)>
+	at com.pensionmanagement.pensiondisbursement.service.PensionDisbursementServiceImplTest.testGetPensionDisbursementPrivateBankFailure(PensionDisbursementServiceImplTest.java:118)
+
+testGetPensionDisbursementIncorrect  Time elapsed: 0.001 s  <<< FAILURE!
+org.opentest4j.AssertionFailedError: expected: com.pensionmanagement.pensiondisbursement.model.ProcessPensionResponse@10f397d0<ProcessPensionResponse(processPensionStatusCode=21)> but was: com.pensionmanagement.pensiondisbursement.model.ProcessPensionResponse@33a3e5db<ProcessPensionResponse(processPensionStatusCode=21)>
+	at com.pensionmanagement.pensiondisbursement.service.PensionDisbursementServiceImplTest.testGetPensionDisbursementIncorrect(PensionDisbursementServiceImplTest.java:65)
+
