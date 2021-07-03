@@ -1,0 +1,668 @@
+/* body{
+	background: black;
+} */
+
+.vie-body{
+	  background:#475d62 ;
+     background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+}
+#vie-input{
+  width: 15%;
+  background-color: black;
+  color: white;
+left:40%;
+position:absolute;
+
+}
+.container-fluid{
+    padding: 0px 15px;
+}
+
+#vie-input:hover {
+  background-color: white;
+}
+a.log2{
+color:white;}
+#vie-btn-submit{
+display:inline-block;
+  width:15%;
+  background-color: black;
+  color: white;
+  padding: 5px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-left:450px;
+}
+
+#pen-a{
+color:white;
+}
+#vie-btn-submit:hover {
+  background-color: white;
+}
+
+ .ver-body{
+	  background:#475d62 ;
+     background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+}
+
+
+
+.ver-container-fluid{
+    padding: 0px 15px;
+}
+
+
+
+
+a.log{
+color:white;
+}
+/* Pensioner Details Form Styling*/
+
+.ver-pension-form{
+	   width: 40%;
+	 
+position: absolute;
+
+  top: 54%;
+  left: 50%;
+  -ms-transform: translateX(-50%) translateY(-50%);
+  -webkit-transform: translate(-50%,-50%);
+  transform: translate(-50%,-50%);
+  justify-content: center;
+    
+     border-radius: 5px;
+background:black;
+color:white;
+  padding-left: 20px;
+}
+
+
+
+
+.ver-input, .ver-select {
+  width: 90%;
+  padding: 6px 16px;
+  margin: 8px 0;
+  display: inline-block;
+  box-sizing: border-box;
+    background:none;
+  border:none;
+  border-bottom:1px solid #434a52;
+  border-radius:0;
+  box-shadow:none;
+  outline:none;
+  color:inherit;
+}
+
+  #ver-btn-submit{
+  width: 35%;
+  background-color: teal;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  margin-top: 30px;
+  margin-left: 170px;
+
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+#ver-btn-submit:hover {
+  background-color: white;
+}
+
+
+.ver-label {
+    /* Other styling... */
+   
+    float:left;
+}
+
+.ver-span { 
+   			 margin: 0px;
+            display: block; 
+            overflow: hidden; 
+            padding: 0px 0px 0px 0px; 
+        } 
+
+#ver-a{
+color:white;
+}
+ 
+ 	.pen-body{
+	  background:#475d62 ;
+	
+     background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    
+    
+	}
+
+.pen-pension-form{
+	   width: 40%;
+position: absolute;
+  top: 57%;
+  left: 50%;
+  -ms-transform: translateX(-50%) translateY(-50%);
+  -webkit-transform: translate(-50%,-50%);
+  transform: translate(-50%,-50%);
+  justify-content: center;
+    padding-top:50px;
+background:black;
+color:white;
+  padding: 20px;
+  
+}
+
+.pen-pension-form form .form-control{
+  background:none;
+  border:none;
+  border-bottom:1px solid #434a52;
+  border-radius:0;
+  box-shadow:none;
+  outline:none;
+  color:inherit;
+}
+#pen-btn-submit{
+display:inline-block;
+  width: 25%;
+  background-color: teal;
+  color: white;
+  padding: 5px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-left:200px;
+}
+
+
+#pen-btn-submit:hover {
+  background-color: white;
+}
+
+#pen-label {   
+    float:left;
+}
+
+	
+.pen-error
+{	
+	color:black;
+	text-align:center;		
+	font-size: 25px;
+}
+
+#pen-a{
+color:white;
+}
+ 
+      .msg-body{
+	  background:#475d62 ;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    
+}
+
+
+
+container-fluid{
+    padding: 0px 15px;
+}
+
+
+
+
+/* Pensioner Details Form Styling*/
+
+.msg-pension-form{
+	   width: 55%;
+position: absolute;
+	 position: absolute;
+  top: 40%;
+  left: 60%;
+  -ms-transform: translateX(-50%) translateY(-50%);
+  -webkit-transform: translate(-50%,-50%);
+  transform: translate(-50%,-50%);
+  justify-content: center;
+    padding-top:50px;
+     border-radius: 5px;
+  padding: 20px;
+  color:white;
+  background-color:black;
+}
+#msg-btn-submit{
+  width: 25%;
+  background-color: black;
+  color: white;
+  top: 150%;
+  left: 25%;
+  position:absolute;
+  border-radius: 4px;
+  cursor: pointer;
+  
+}
+#a1{color:white;}
+#msg-btn-submit:hover {
+  background-color: white;
+}
+  
+    .login-dark {
+  height:607px;
+  position:relative;
+}
+
+.login-dark form {
+  max-width:320px;
+  width:90%;
+  background-color:#1e2833;
+  padding:40px;
+  border-radius:4px;
+  transform:translate(-50%, -50%);
+  position:absolute;
+  top:50%;
+  left:50%;
+  color:#fff;
+  box-shadow:3px 3px 4px rgba(0,0,0,0.2);
+}
+
+.login-dark .illustration {
+  text-align:center;
+  padding:15px 0 20px;
+  font-size:100px;
+  color:#2980ef;
+}
+
+.login-dark form .form-control {
+  background:none;
+  border:none;
+  border-bottom:1px solid #434a52;
+  border-radius:0;
+  box-shadow:none;
+  outline:none;
+  color:inherit;
+}
+
+.login-dark form .btn-primary {
+  background:#214a80;
+  border:none;
+  border-radius:4px;
+  padding:11px;
+  box-shadow:none;
+  margin-top:26px;
+  text-shadow:none;
+  outline:none;
+}
+
+.login-dark form .btn-primary:hover, .login-dark form .btn-primary:active {
+  background:#214a80;
+  outline:none;
+}
+
+.login-dark form .forgot {
+  display:block;
+  text-align:center;
+  font-size:12px;
+  color:#6f7a85;
+  opacity:0.9;
+  text-decoration:none;
+}
+
+.login-dark form .forgot:hover, .login-dark form .forgot:active {
+  opacity:1;
+  text-decoration:none;
+}
+
+.login-dark form .btn-primary:active {
+  transform:translateY(1px);
+}
+ 	
+	.ind-body{
+	  background:#475d62 ;
+}
+
+
+.indloginheading{
+    color: aliceblue;
+    margin-left: 5%;
+    margin-top:  280px;
+    font-size: 55px;
+}
+
+
+#ind-btn{
+    
+    margin-top: 20px;
+    margin-left: 45%;
+    width: 11%;
+    height: 40px;
+    border-radius: 10px;
+    font-size: 20px;
+    background-color: white;
+}
+#ind-btn:hover {
+  background-color:gray;
+}
+
+ 
+ 	.hom-body{
+  background:#475d62 ;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+}
+
+#first{
+margin-left:32%;
+margin-top:25%;
+width:250px;
+}
+#second{
+margin-left:0%;
+margin-top:25%;
+width:250px;
+
+}
+h1,h3,h4{
+text-align:center;
+color:white;
+
+}
+h5{
+text-align:center;
+color:black;
+font-size:30px;
+}
+.card{
+background-color:white;
+position:absolute;
+left:30%;
+top:50%;
+height:200px;
+
+}
+#one{
+top:65%;
+left:5%;
+background-color:lightgray;
+}
+#two{
+top:65%;
+left:50%;
+background-color:lightgray;
+
+}
+p
+{
+text-align:center;
+}
+
+.hom-container{
+   width: 40%;
+   height:25%;
+   left:30%;
+   top:20%;
+position: absolute;
+	 float:left;
+     padding-top:50px;
+     border-radius: 5px;
+  padding: 20px;
+}
+a.log1{
+color:white;
+}
+    .fai-body{
+	  background:#475d62 ;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    
+}
+
+
+
+.fai-container-fluid{
+    padding: 0px 15px;
+}
+
+
+
+
+/* Pensioner Details Form Styling*/
+
+.fai-pension-form{
+	   width: 65%;
+position: absolute;
+	 position: absolute;
+  top: 40%;
+  left: 55%;
+  -ms-transform: translateX(-50%) translateY(-50%);
+  -webkit-transform: translate(-50%,-50%);
+  transform: translate(-50%,-50%);
+  justify-content: center;
+    padding-top:50px;
+     border-radius: 5px;
+  padding: 20px;
+    color:white;
+  background-color: black;
+}
+#fai-btn-submit{
+  width: 25%;
+  background-color:black;
+  color: white;
+  top: 150%;
+  left: 35%;
+  position:absolute;
+  border-radius: 4px;
+  cursor: pointer;
+  
+}
+
+#fai-btn-submit:hover {
+  background-color: white;
+}
+#fai-a{
+color:white;
+}
+  .exe-body{
+	  background:#475d62 ;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    
+}
+
+
+
+.exe-container-fluid{
+    padding: 0px 15px;
+}
+
+
+/* Pensioner Details Form Styling*/
+
+.exe-pension-form{
+	   width: 65%;
+position: absolute;
+	 position: absolute;
+  top: 40%;
+  left: 53%;
+  -ms-transform: translateX(-50%) translateY(-50%);
+  -webkit-transform: translate(-50%,-50%);
+  transform: translate(-50%,-50%);
+  justify-content: center;
+    padding-top:50px;
+     border-radius: 5px;
+  padding: 20px;
+}
+#exe-btn-submit{
+  width: 25%;
+  background-color: black;
+  color: white;
+  top: 150%; 
+  left: 35%;
+   position:absolute;
+  border-radius: 4px;
+  cursor: pointer; 
+  
+}
+#exe-btn-submit:hover {
+  background-color: white;
+} 
+#exe-a{
+color:white;
+}
+ 
+ .errbody{
+      background:#475d62 ;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    
+}
+
+ 
+
+ 
+
+.err-container-fluid{
+    padding: 0px 15px;
+}
+
+ 
+
+
+
+
+ 
+
+
+/* Pensioner Details Form Styling*/
+
+ 
+
+.err-pension-form{
+       width: 55%;
+position: absolute;
+     position: absolute;
+  top: 40%;
+  left: 60%;
+  -ms-transform: translateX(-50%) translateY(-50%);
+  -webkit-transform: translate(-50%,-50%);
+  transform: translate(-50%,-50%);
+  justify-content: center;
+    padding-top:50px;
+     border-radius: 5px;
+  padding: 20px;
+  color:white;
+  background-color: black;
+}
+#err-btn-submit{
+  width: 25%;
+  background-color: black;
+  color: white;
+  top: 150%;
+  left: 25%;
+  position:absolute;
+  border-radius: 4px;
+  cursor: pointer;
+  
+}
+
+ 
+
+#err-btn-submit:hover {
+  background-color: white;
+}
+	.eval-body{
+	  background:#475d62;
+     background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+}
+
+a.log{
+color:white;
+}
+
+.container-fluid{
+    padding: 0px 15px;
+    margin:auto;
+}
+
+
+
+
+/* Pensioner Details Form Styling*/
+
+
+.eval-pension-form{
+	   width: 40%;
+position: absolute;
+	 position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translateX(-50%) translateY(-50%);
+  -webkit-transform: translate(-50%,-50%);
+  transform: translate(-50%,-50%);
+  justify-content: center;
+    padding-top:50px;
+     border-radius: 5px;
+background:black;
+color:white;
+  padding: 20px;
+}
+
+
+.eval-input{
+  width: 100%;
+  padding: 6px 16px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  background:none;
+  border:none;
+  border-bottom:1px solid #434a52;
+  border-radius:0;
+  box-shadow:none;
+  outline:none;
+  color:inherit;
+}
+
+  #eval-btn-submit{
+  width: 35%;
+  heigth:30%;
+  background-color: teal;
+  color: white;
+  margin: 8px 0;
+  margin-left: 170px;
+
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+#eval-btn-submit:hover {
+  background-color: white;
+}
+
+#eval-a{
+color:white;
+}
