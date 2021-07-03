@@ -36,7 +36,7 @@ public class AuthenticationController {
 	 */
 	@PostMapping(value = "/login")
 	public ResponseEntity<UserLoginCredential> login(@RequestBody UserLoginCredential userlogincredentials) throws UserException {
-		log.debug("%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Start : {}", "login");
+		log.debug("Start : {}", "login");
 		try{
 		final UserDetails userdetails = custdetailservice.loadUserByUsername(userlogincredentials.getUid());
 		if (userdetails.getPassword().equals(userlogincredentials.getPassword())) {
@@ -66,7 +66,7 @@ public class AuthenticationController {
 	 */
 	@GetMapping(value = "/validate")
 	public ResponseEntity<AuthResponse> getValidity(@RequestHeader("Authorization") String header) {
-		log.debug("%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Start : {}", "getValidity");
+		log.debug("Start : {}", "getValidity");
 		String token = header.substring(7);
 		AuthResponse res = new AuthResponse();
 		if (jwtutil.validateToken(token)) {
