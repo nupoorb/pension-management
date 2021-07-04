@@ -14,7 +14,7 @@ import com.pensionmanagement.portal.model.PensionerInput;
 import com.pensionmanagement.portal.model.ProcessPensionInput;
 import com.pensionmanagement.portal.model.ProcessPensionResponse;
 
-@FeignClient(name = "process-pension", url = "${process-pension}")
+@FeignClient(name="processpension", url = "${processpension}")
 public interface ProcessPensionClient {
 	
 	@PostMapping("/pensiondetail")
