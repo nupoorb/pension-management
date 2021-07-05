@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.RequestHeader;
 import com.pensionmanagement.processpension.model.ProcessPensionInput;
 import com.pensionmanagement.processpension.model.ProcessPensionResponse;
 
-@org.springframework.cloud.openfeign.FeignClient(name="Disbursement", url="${pension-disbursement}")
+@org.springframework.cloud.openfeign.FeignClient(name="pensiondisburse")
 public interface PensionDisbursementClient {
 
 	@PostMapping("/disbursepension")

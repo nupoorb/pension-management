@@ -12,8 +12,10 @@ import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import com.pensionmanagement.common.exception.PensionerDetailsNotFound;
 import com.pensionmanagement.common.exception.TokenException;
 import com.pensionmanagement.portal.model.PensionDetail;
 import com.pensionmanagement.portal.model.PensionerInput;
@@ -30,7 +32,7 @@ public class PensionProcessController {
 	private PortalService pensionProcessService;
 
 	@GetMapping("/view")
-	public String viewing(ModelMap model,HttpSession session,HttpServletRequest request)  {
+	public String viewing(ModelMap model,HttpSession session,HttpServletRequest request) throws TokenException  {
 		if((session.getAttribute("token")==null)) {
 			log.debug("User should login");
 			
@@ -38,6 +40,7 @@ public class PensionProcessController {
 			}
 		log.debug("Showing  Pensioner Details ");
 		String token = (String)	request.getSession().getAttribute("token");
+		log.info("viewing");
 		List<PensionDetail> a=pensionProcessService.viewdetails(token);
 		if (a.isEmpty()) {
 			model.put("userdetails", "No Pensioner Details");
@@ -61,7 +64,7 @@ public class PensionProcessController {
 	
 
 	@PostMapping("/submitinfo")
-	public String submitPensionerInfo(@ModelAttribute("pensionerInput") PensionerInput pensionerInput,Model model,HttpServletRequest request) throws TokenException {
+	public String submitPensionerInfo(@ModelAttribute("pensionerInput") PensionerInput pensionerInput,Model model,HttpServletRequest request) throws TokenException, PensionerDetailsNotFound {
 		log.debug("Submitting Pensioner Details");
 		String token = (String)	request.getSession().getAttribute("token");
 		return pensionProcessService.submitPensionInput(pensionerInput,model,token);
@@ -81,7 +84,7 @@ public class PensionProcessController {
 	
 
 	@PostMapping("/evaluate")
-	public String disburseProcess(Model model,@RequestParam("aadhaar") long aadhaar,@RequestParam("amount") double amount,@RequestParam("bankcharge") double bankCharge,HttpServletRequest request) {
+	public String disburseProcess(Model model,@RequestParam("aadhaar") long aadhaar,@RequestParam("amount") double amount,@RequestParam("bankcharge") double bankCharge,HttpServletRequest request) throws TokenException, PensionerDetailsNotFound {
 		log.debug("Evaluating The Disburse Form");
 		String token = (String)	request.getSession().getAttribute("token");
 		

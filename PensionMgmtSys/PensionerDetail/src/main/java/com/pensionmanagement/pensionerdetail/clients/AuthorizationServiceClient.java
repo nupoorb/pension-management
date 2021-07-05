@@ -7,8 +7,8 @@ import org.springframework.web.bind.annotation.RequestHeader;
 
 import com.pensionmanagement.pensionerdetail.model.AuthResponse;
 
-@org.springframework.cloud.openfeign.FeignClient(name="GetValidation", url="${auth.valid}")
-//@FeignClient("auth")
+//@org.springframework.cloud.openfeign.FeignClient(name="GetValidation", url="${auth.valid}")
+@FeignClient("auth")
 public interface AuthorizationServiceClient {
 
 	@GetMapping("/validate")

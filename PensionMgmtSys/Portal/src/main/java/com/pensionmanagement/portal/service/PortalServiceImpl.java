@@ -11,7 +11,9 @@ import org.springframework.ui.Model;
 
 import com.pensionmanagement.portal.clients.AuthServiceClient;
 import com.pensionmanagement.portal.clients.ProcessPensionClient;
+import com.pensionmanagement.common.exception.PensionerDetailsNotFound;
 import com.pensionmanagement.common.exception.TokenException;
+import com.pensionmanagement.common.exception.UserException;
 import com.pensionmanagement.portal.model.MyConstants;
 import com.pensionmanagement.portal.model.PensionDetail;
 import com.pensionmanagement.portal.model.PensionerInput;
@@ -36,12 +38,12 @@ public class PortalServiceImpl implements PortalService {
 
 
 	@Override
-	public UserLoginCredential getPensionerPage(UserLoginCredential login) {
+	public UserLoginCredential getPensionerPage(UserLoginCredential login) throws UserException{
 		
 		log.debug("getPensionerPage() method invoked. Inside Portalservice ");
 		ResponseEntity<UserLoginCredential> response = null;
 		try{
-			response = authServiceClient.authenticateUserAndGetDetails(login);
+			response = authServiceClient.login(login);
 			if (response.getStatusCode().equals(HttpStatus.OK) && response.getBody() != null) {
 				return response.getBody();	
 			}
@@ -63,7 +65,7 @@ public class PortalServiceImpl implements PortalService {
 	
 
 	@Override
-	public String submitPensionInput(PensionerInput pensionerInput, Model model,String token) throws TokenException {
+	public String submitPensionInput(PensionerInput pensionerInput, Model model,String token) throws TokenException, PensionerDetailsNotFound {
 		log.debug("submitPensionInput() method inside PortalService invoked");
 		List<PensionDetail> pensionDetails=this.viewdetails(token);
 		for(PensionDetail p: pensionDetails) {
@@ -74,7 +76,7 @@ public class PortalServiceImpl implements PortalService {
 				return "pensionerdetails";
 			}
 		}			PensionDetail pensionDetail = null;
-				pensionDetail = processPensionClient.getPensionDetail(pensionerInput,token );
+				pensionDetail = (PensionDetail) processPensionClient.getPensionDetail(pensionerInput,token ).getBody();
 				if (pensionDetail == null)
 					{
 					log.error("PensionerDetails Did not Match");
@@ -99,9 +101,9 @@ public class PortalServiceImpl implements PortalService {
 	
 
 	@Override
-	public String disburseProcess(ProcessPensionInput processPensionInput, String token,Model model) {
+	public String disburseProcess(ProcessPensionInput processPensionInput, String token,Model model) throws TokenException, PensionerDetailsNotFound {
 		log.debug("disburseProcess() Method inside Portal Service invoked To Verify Disburse Form");	
-		response = processPensionClient.getDisbursementCode(token, processPensionInput);
+		response = processPensionClient.processPension(token, processPensionInput);
 				int code = response.getProcessPensionStatusCode();
 				if (code == MyConstants.SUCCESS) {
 					model.addAttribute("message","Pension Disbursed Successfully!");
@@ -125,7 +127,8 @@ public class PortalServiceImpl implements PortalService {
 
 
 	@Override
-	public List<PensionDetail> viewdetails(String token) {
+	public List<PensionDetail> viewdetails(String token) throws TokenException {
+		log.info("Portalseviceimple viewdetails");
 		return processPensionClient.viewdetails(token);
 		
 	}
