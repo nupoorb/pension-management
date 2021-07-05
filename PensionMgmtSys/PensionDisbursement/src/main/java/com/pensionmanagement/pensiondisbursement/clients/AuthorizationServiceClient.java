@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.RequestHeader;
 
 import com.pensionmanagement.common.exception.TokenException;
 
-@FeignClient(name = "authorization-service", url = "${auth-valid}")
+@FeignClient(name = "auth")
 public interface AuthorizationServiceClient {
 
 	@PostMapping("/validate")

@@ -40,7 +40,7 @@ public class ProcessPensionController {
 	 * @return ResponseEntity<?>
 	 */	
 	@PostMapping("/pensiondetail")
-	public ResponseEntity<?> getPensionDetail(@RequestBody PensionerInput pensionerInput,@RequestHeader(name="Authorization") String header) throws  TokenException, PensionerDetailsNotFound
+	public ResponseEntity<PensionDetail> getPensionDetail(@RequestBody PensionerInput pensionerInput,@RequestHeader(name="Authorization") String header) throws  TokenException, PensionerDetailsNotFound
 	{
 		log.info("Inside getPensionDetail() method of processPension Microservice");
 		try{

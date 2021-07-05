@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RequestHeader;
 
 import com.pensionmanagement.pensiondisbursement.model.PensionerDetail;
 
-@FeignClient(name = "pensionerdetailmodule-service", url = "${pension-detail}")
+@FeignClient(name = "pensionerdetail")
 public interface PensionerDetailClient {
 
 

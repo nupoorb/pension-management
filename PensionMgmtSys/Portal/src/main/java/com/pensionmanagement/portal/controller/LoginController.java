@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 
+import com.pensionmanagement.common.exception.UserException;
 import com.pensionmanagement.portal.model.PensionerInput;
 import com.pensionmanagement.portal.model.UserLoginCredential;
 import com.pensionmanagement.portal.service.PortalService;
@@ -67,7 +68,7 @@ public class LoginController {
 	
 
 	@PostMapping("/login")
-	public String parseLoginPage(@ModelAttribute("login") UserLoginCredential login,HttpServletRequest request,Model model) {
+	public String parseLoginPage(@ModelAttribute("login") UserLoginCredential login,HttpServletRequest request,Model model) throws UserException {
 		log.debug("Submitting login Information");
 		UserLoginCredential token = portalService.getPensionerPage(login);
 		if(token!=null)

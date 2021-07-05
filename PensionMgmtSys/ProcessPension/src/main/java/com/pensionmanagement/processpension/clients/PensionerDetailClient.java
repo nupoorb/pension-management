@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RequestHeader;
 import com.pensionmanagement.common.exception.PensionerDetailsNotFound;
 import com.pensionmanagement.processpension.model.PensionerDetailPojo;
 
-@org.springframework.cloud.openfeign.FeignClient(name="GetPensionerDetails", url="${pension-detail}")
+@org.springframework.cloud.openfeign.FeignClient(name="pensionerdetail")
 public interface PensionerDetailClient {
 
 	@GetMapping("/pensionerdetailbyaadhaar/{aadharno}")
