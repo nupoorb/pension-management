@@ -50,7 +50,7 @@ public class PensionerDetailTest {
 		assertEquals(213456716542L,pensiondetail.getAadharNumber());
 		assertEquals("piyush",pensiondetail.getName());
 		assertEquals(date,pensiondetail.getDateOfBirth());
-		assertEquals("CQEPB6781",pensiondetail.getPan());
+		assertEquals("PCASB6781",pensiondetail.getPan());
 		assertEquals(98700.10,pensiondetail.getSalaryEarned());
 		assertEquals(7890,pensiondetail.getAllowances());
 		assertEquals("self",pensiondetail.getPensionType());

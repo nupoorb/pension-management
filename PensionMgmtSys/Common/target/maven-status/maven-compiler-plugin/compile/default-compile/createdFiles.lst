@@ -1,0 +1,6 @@
+com\pensionmanagement\common\exception\GlobalExceptionHandler.class
+com\pensionmanagement\common\exception\PensionerDetailsException.class
+com\pensionmanagement\common\exception\NotFoundException.class
+com\pensionmanagement\common\exception\TokenException.class
+com\pensionmanagement\common\exception\PensionerDetailsNotFound.class
+com\pensionmanagement\common\exception\UserException.class

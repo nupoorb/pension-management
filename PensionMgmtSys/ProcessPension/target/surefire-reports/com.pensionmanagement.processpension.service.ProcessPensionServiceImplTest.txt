@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: com.pensionmanagement.processpension.service.ProcessPensionServiceImplTest
+-------------------------------------------------------------------------------
+Tests run: 13, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 18.555 s - in com.pensionmanagement.processpension.service.ProcessPensionServiceImplTest

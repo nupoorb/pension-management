@@ -12,7 +12,6 @@ import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.pensionmanagement.common.exception.PensionerDetailsNotFound;
@@ -31,6 +30,14 @@ public class PensionProcessController {
 	@Autowired
 	private PortalService pensionProcessService;
 
+	/**
+	 * Show all pensioner details
+	 * @param model
+	 * @param session
+	 * @param request
+	 * @return
+	 * @throws TokenException
+	 */
 	@GetMapping("/view")
 	public String viewing(ModelMap model,HttpSession session,HttpServletRequest request) throws TokenException  {
 		if((session.getAttribute("token")==null)) {

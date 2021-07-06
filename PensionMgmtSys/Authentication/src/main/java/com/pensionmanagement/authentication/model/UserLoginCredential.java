@@ -20,7 +20,9 @@ public class UserLoginCredential {
 	@Id
 	@Column(name="uid" ,length=20)
 	private String uid;
+	
 	@Column(name="password",length=20)
 	private String password;
+	
 	private String token;
 }

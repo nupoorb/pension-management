@@ -14,6 +14,7 @@ import com.pensionmanagement.portal.clients.ProcessPensionClient;
 import com.pensionmanagement.common.exception.PensionerDetailsNotFound;
 import com.pensionmanagement.common.exception.TokenException;
 import com.pensionmanagement.common.exception.UserException;
+import com.pensionmanagement.common.model.ServiceResponse;
 import com.pensionmanagement.portal.model.MyConstants;
 import com.pensionmanagement.portal.model.PensionDetail;
 import com.pensionmanagement.portal.model.PensionerInput;
@@ -40,14 +41,21 @@ public class PortalServiceImpl implements PortalService {
 	@Override
 	public UserLoginCredential getPensionerPage(UserLoginCredential login) throws UserException{
 		
-		log.debug("getPensionerPage() method invoked. Inside Portalservice ");
-		ResponseEntity<UserLoginCredential> response = null;
+		log.info("getPensionerPage() method invoked. Inside Portalservice ");
+		
+		ServiceResponse<UserLoginCredential> response = null;
 		try{
-			response = authServiceClient.login(login);
-			if (response.getStatusCode().equals(HttpStatus.OK) && response.getBody() != null) {
-				return response.getBody();	
+			
+			response = authServiceClient.login(login).getBody();
+			
+			boolean success = response.isSuccess();
+			
+			
+			
+			if (success && response.getData() != null) {
+				return response.getData();	
 			}
-			}
+		}
 		catch(FeignException e)
 		{
 			return null;

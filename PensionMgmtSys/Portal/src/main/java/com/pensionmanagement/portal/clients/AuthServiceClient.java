@@ -8,13 +8,14 @@ import org.springframework.web.bind.annotation.RequestHeader;
 
 import com.pensionmanagement.common.exception.TokenException;
 import com.pensionmanagement.common.exception.UserException;
+import com.pensionmanagement.common.model.ServiceResponse;
 import com.pensionmanagement.portal.model.UserLoginCredential;
 
 @FeignClient(name = "auth")
 public interface AuthServiceClient {
 
 	@PostMapping(value = "/login")
-	public ResponseEntity<UserLoginCredential> login( UserLoginCredential userlogincredentials) throws UserException;
+	public ResponseEntity<ServiceResponse<UserLoginCredential>> login( UserLoginCredential userlogincredentials) throws UserException;
 
 	@PostMapping("/validate")
 	public boolean validateToken(@RequestHeader("Authorization") String token)throws TokenException;

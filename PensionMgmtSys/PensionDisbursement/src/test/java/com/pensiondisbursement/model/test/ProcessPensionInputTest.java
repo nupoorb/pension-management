@@ -39,6 +39,15 @@ public class ProcessPensionInputTest {
 		input.setAadharNumber(1276549873L);
 		assertEquals(1276549873L,input.getAadharNumber());	
 	}
+	
+	@Test
+	public void toStringTest() {
+		input = new ProcessPensionInput(1765437098L,40000,5000);
+		
+		assertEquals(true, input.toString().contains(input.getAadharNumber().toString()));
+		assertEquals(true, input.toString().contains(String.valueOf(input.getPensionAmount())));
+		assertEquals(true, input.toString().contains(String.valueOf(input.getBankCharge())));
+	}
 
 }
 

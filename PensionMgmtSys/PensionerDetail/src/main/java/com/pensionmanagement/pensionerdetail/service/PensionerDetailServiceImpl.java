@@ -7,9 +7,12 @@ import java.text.ParseException;
 import java.util.HashMap;
 import java.util.Map;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.pensionmanagement.common.exception.NotFoundException;
+import com.pensionmanagement.common.exception.TokenException;
+import com.pensionmanagement.pensionerdetail.clients.AuthorizationServiceClient;
 import com.pensionmanagement.pensionerdetail.model.PensionerDetail;
 import com.pensionmanagement.pensionerdetail.util.DateUtil;
 
@@ -19,6 +22,9 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 public class PensionerDetailServiceImpl implements PensionerDetailService {
 
+	@Autowired 
+	private AuthorizationServiceClient feignWithAuth;
+	
 	private Map<Long, PensionerDetail> pensionDetails;
 	
 	public PensionerDetailServiceImpl() throws NumberFormatException, IOException, ParseException {
@@ -55,5 +61,27 @@ public class PensionerDetailServiceImpl implements PensionerDetailService {
 			throw new NotFoundException("The Adhaar Number is Unregistered");
 		}
 
+	}
+
+	@Override
+	public PensionerDetail findById(String header, long aadharnumber)
+			throws TokenException, NumberFormatException, IOException, ParseException, NotFoundException {
+		// TODO Auto-generated method stub
+		
+		try{
+			feignWithAuth.validate(header);
+		}
+		catch(Exception e)
+			{	
+				log.error("Validation Error");
+				throw new TokenException("Invalid Token");
+			}
+		PensionerDetail obj =  getById(aadharnumber);
+		if(obj == null)
+		{	log.warn("Adhaar Number is not valid");
+		    throw new NotFoundException("The Adhaar Number is Unregistered");
+		}
+		else 
+			return obj;	
 	}
 }

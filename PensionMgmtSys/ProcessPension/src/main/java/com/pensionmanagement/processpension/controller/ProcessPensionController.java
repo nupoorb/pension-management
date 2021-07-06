@@ -44,13 +44,15 @@ public class ProcessPensionController {
 	{
 		log.info("Inside getPensionDetail() method of processPension Microservice");
 		try{
+			
 			feignWithAuth.validate(header);
-			}
-		catch(Exception e)
-			{	
+			
+		}catch(Exception e)	{	
+			
 				log.error("Validation Error");
+				
 				throw new TokenException("Invalid Token");
-			}
+		}
 		
 		return new ResponseEntity<>(service.getPensionDetail(header,pensionerInput),HttpStatus.OK);
 	
@@ -67,16 +69,19 @@ public class ProcessPensionController {
 	{
 		log.info("Inside getPensionDetail() method of processPension Microservice");
 		
-		
 		try{
+			
 			feignWithAuth.validate(header);
-			}
-		catch(Exception e)
-			{	
+			
+		}catch(Exception e){	
+			
 				log.error("Validation Error");
+				
 				throw new TokenException("Invalid Token");
-			}
+		}
+		
 		log.info("Returning Status Code");
+		
 		return service.processPensionInput(header,pensionInput);			
 	}
 	
@@ -91,14 +96,18 @@ public class ProcessPensionController {
 		
 		
 		try{
+			
 			feignWithAuth.validate(header);
-			}
-		catch(Exception e)
-			{	
-				log.error("Validation Error");
-				throw new TokenException("Invalid Token");
-			}
+		
+		}catch(Exception e){	
+			
+			log.error("Validation Error");
+			
+			throw new TokenException("Invalid Token");
+		}
+		
 		log.info("Returning Details");
+		
 		return service.viewing();
 	
 	
